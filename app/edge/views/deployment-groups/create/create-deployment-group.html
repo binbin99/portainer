@@ -10,7 +10,14 @@
   <div class="col-sm-12">
     <rd-widget>
       <rd-widget-body>
-        <deployment-group-form form-action-label="Add deployment group"></deployment-group-form>
+        <deployment-group-form
+          form-action-label="Add deployment group"
+          form-action="$ctrl.createGroup"
+          endpoints="$ctrl.endpoints"
+          groups="$ctrl.endpointGroups"
+          tags="$ctrl.tags"
+          model="$ctrl.model"
+        ></deployment-group-form>
       </rd-widget-body>
     </rd-widget>
   </div>
