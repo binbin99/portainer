@@ -45,7 +45,7 @@ angular.module('portainer.edge', []).config([
       url: '/deploymentgroups',
       views: {
         'content@': {
-          template: '<div>d g</div>'
+          component: 'deploymentGroupsView'
         }
       }
     };
@@ -55,17 +55,17 @@ angular.module('portainer.edge', []).config([
       url: '/new',
       views: {
         'content@': {
-          template: '<div>d g new</div>'
+          component: 'createDeploymentGroupView'
         }
       }
     };
 
     const deploymentGroupsEdit = {
       name: 'edge.deploymentGroups.edit',
-      url: '/:deploymentGroupId/edit',
+      url: '/:deploymentGroupId',
       views: {
         'content@': {
-          template: '<div>d g edit</div>'
+          component: 'editDeploymentGroupView'
         }
       }
     };
