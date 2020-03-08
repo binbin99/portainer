@@ -106,7 +106,7 @@
                   />
                   <label for="select_{{ $index }}"></label>
                 </span>
-                {{ item.Name }}
+                <a ui-sref="edge.deploymentGroups.edit({deploymentGroupId: item.Id})">{{ item.Name }}</a>
               </td>
               <td>{{ item.Endpoints.length }}</td>
               <td>{{ item.Tags.length }}</td>

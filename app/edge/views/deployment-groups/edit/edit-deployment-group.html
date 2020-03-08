@@ -1,1 +1,23 @@
-edit deployment group
+<rd-header>
+  <rd-header-title title-text="Create deployment group"></rd-header-title>
+  <rd-header-content>
+    <a ui-sref="portainer.deploymentGroups">Deployment Groups</a> &gt; {{$ctrl.model.Name}}
+  </rd-header-content>
+</rd-header>
+
+<div class="row" ng-if="$ctrl.model">
+  <div class="col-sm-12">
+    <rd-widget>
+      <rd-widget-body>
+        <deployment-group-form
+          form-action-label="Save deployment group"
+          form-action="$ctrl.updateGroup"
+          endpoints="$ctrl.endpoints"
+          groups="$ctrl.endpointGroups"
+          tags="$ctrl.tags"
+          model="$ctrl.model"
+        ></deployment-group-form>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
