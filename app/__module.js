@@ -5,6 +5,7 @@ import './agent/_module';
 import './azure/_module';
 import './docker/__module';
 import './portainer/__module';
+import './edge/__module';
 
 angular.module('portainer', [
   'ui.bootstrap',
@@ -31,6 +32,7 @@ angular.module('portainer', [
   'portainer.docker',
   'portainer.extensions',
   'portainer.integrations',
+  'portainer.edge',
   'rzModule',
   'moment-picker'
 ]);
