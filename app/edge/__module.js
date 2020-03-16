@@ -62,7 +62,7 @@ angular.module('portainer.edge', []).config([
 
     const stacksEdit = {
       name: 'edge.stacks.edit',
-      url: '/:stackId',
+      url: '/:id',
       views: {
         'content@': {
           component: 'editEdgeStackView'
