@@ -20,6 +20,8 @@ angular
         })
       ];
 
+    const stackContent = {};
+
     var service = {};
 
     service.stack = async function group(groupId) {
@@ -40,16 +42,58 @@ angular
       stacks.splice(index, 1);
     };
 
-    service.create = async function create(group) {
-      await wait(1000);
-      group.Id = stacks.length + 1;
-      stacks.push(group);
-    };
-
     service.update = async function update(groupId, group) {
       const index = stacks.findIndex(({ Id }) => Id === groupId);
       await wait(1000);
       stacks[index] = group;
+    };
+
+    service.createSwarmStackFromFileContent = async function createSwarmStackFromFileContent(
+      name,
+      content,
+      env,
+      groups
+    ) {
+      const newStack = new EdgeStackViewModel({
+        Id: stacks.length,
+        Name: name,
+        Groups: groups
+      });
+      stackContent[newStack.Id] = content;
+      await wait(500);
+      stacks.push(newStack);
+    };
+
+    service.createSwarmStackFromFileUpload = async function createSwarmStackFromFileUpload(
+      name,
+      stackFile,
+      env,
+      groups
+    ) {
+      const newStack = new EdgeStackViewModel({
+        Id: stacks.length,
+        Name: name,
+        Groups: groups
+      });
+      // stackContent[newStack.Id] = content;
+      await wait(500);
+      stacks.push(newStack);
+    };
+
+    service.createSwarmStackFromGitRepository = async function createSwarmStackFromGitRepository(
+      name,
+      repositoryOptions,
+      env,
+      groups
+    ) {
+      const newStack = new EdgeStackViewModel({
+        Id: stacks.length,
+        Name: name,
+        Groups: groups
+      });
+      // stackContent[newStack.Id] = content;
+      await wait(500);
+      stacks.push(newStack);
     };
 
     return service;

@@ -13,13 +13,13 @@
 }
 
 .status .error {
-  background-color: red;
+  background-color: #ae2323;
 }
 
 .status .acknowledged {
-  background-color: orange;
+  background-color: #f0ad4e;
 }
 
 .status .ok {
-  background-color: greenyellow;
+  background-color: #23ae89;
 }

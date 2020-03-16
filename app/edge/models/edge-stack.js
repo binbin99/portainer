@@ -3,4 +3,5 @@ export function EdgeStackViewModel(data) {
   this.Name = data.Name;
   this.Status = data.Status;
   this.CreationDate = data.CreationDate;
+  this.Groups = data.Groups;
 }
