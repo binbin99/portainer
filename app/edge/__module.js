@@ -7,7 +7,13 @@ angular.module('portainer.edge', []).config([
       name: 'edge',
       url: '/edge',
       parent: 'root',
-      abstract: true
+      abstract: true,
+      onEnter($state, Notifications, Authentication) {
+        if (!Authentication.isAdmin()) {
+          Notifications.warning('User is not authorized');
+          $state.go('portainer.home');
+        }
+      }
     };
 
     const groups = {

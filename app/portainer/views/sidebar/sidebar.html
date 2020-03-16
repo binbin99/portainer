@@ -80,17 +80,15 @@
         <a ui-sref="portainer.about" ui-sref-active="active">About</a>
       </div>
     </li>
-    <ng-if="isAdmin"><!-- TODO hide when batch actions is disabled -->
-      <li class="sidebar-title">
-        <span>Edge Compute</span>
-      </li>
-      <li class="sidebar-list">
-        <a ui-sref="edge.groups" ui-sref-active="active">Edge Groups <span class="menu-icon fa fa-plane-departure fa-fw"></span></a>
-      </li>
-      <li class="sidebar-list">
-        <a ui-sref="edge.stacks" ui-sref-active="active">Edge Stacks<span class="menu-icon fa fa-radiation fa-fw"></span></a>
-      </li>
-    </ng-if>
+    <li class="sidebar-title" ng-if="isAdmin">
+      <span>Edge Compute</span>
+    </li>
+    <li class="sidebar-list" ng-if="isAdmin">
+      <a ui-sref="edge.groups" ui-sref-active="active">Edge Groups <span class="menu-icon fa fa-plane-departure fa-fw"></span></a>
+    </li>
+    <li class="sidebar-list" ng-if="isAdmin">
+      <a ui-sref="edge.stacks" ui-sref-active="active">Edge Stacks<span class="menu-icon fa fa-radiation fa-fw"></span></a>
+    </li>
   </ul>
   <div class="sidebar-footer-content">
     <div class="update-notification" ng-if="applicationState.application.versionStatus.UpdateAvailable">
