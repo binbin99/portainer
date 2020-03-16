@@ -1,11 +1,27 @@
+import { EdgeGroupViewModel } from 'Edge/models/edge-group';
+
 angular
   .module('portainer.app')
   .factory('EdgeGroupService', function EdgeGroupServiceFactory() {
     const groups =
       //TODO MOCK
       [
-        { Id: 1, Name: 'Group 1', Endpoints: [1], Tags: [1, 2] },
-        { Id: 2, Name: 'Group 2', Endpoints: [], Tags: [1, 2, 3] }
+        new EdgeGroupViewModel({
+          id: 1,
+          name: 'Group 1',
+          endpoints: [1],
+          type: 'static',
+          tags: [],
+          endpointsCount: 1
+        }),
+        new EdgeGroupViewModel({
+          id: 2,
+          name: 'Group 2',
+          endpoints: [],
+          type: 'dynamic',
+          tags: [1, 2, 3],
+          endpointsCount: 5
+        })
       ];
 
     var service = {};
