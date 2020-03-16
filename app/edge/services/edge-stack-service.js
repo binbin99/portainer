@@ -10,13 +10,15 @@ angular
           Id: 1,
           Name: 'Stack 1',
           Status: { Acknowledged: 3, Ok: 1, Error: 3 },
-          CreationDate: Date.now() - 3 * 24 * 60 * 60 * 1000
+          CreationDate: Date.now() - 3 * 24 * 60 * 60 * 1000,
+          Groups: [1]
         }),
         new EdgeStackViewModel({
           Id: 2,
           Name: 'Stack 2',
           Status: { Acknowledged: 2, Ok: 11, Error: 0 },
-          CreationDate: Date.now() - 15 * 24 * 60 * 60 * 1000
+          CreationDate: Date.now() - 15 * 24 * 60 * 60 * 1000,
+          Groups: [2, 1]
         })
       ];
 
@@ -24,9 +26,11 @@ angular
 
     var service = {};
 
-    service.stack = async function group(groupId) {
+    service.stack = async function stack(stackId) {
       await wait(1000);
-      return stacks.find(({ Id }) => +groupId === Id);
+      const stack = stacks.find(({ Id }) => +stackId === Id);
+      stack.content = stackContent[stackId];
+      return stack;
       // return Endpoints.get({id: endpointID}).$promise;
     };
 

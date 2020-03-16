@@ -123,8 +123,10 @@
                 <a
                   href="https://docs.docker.com/compose/compose-file/"
                   target="_blank"
-                  >official documentation</a
-                >.
+                >
+                  official documentation
+                </a>
+                .
               </span>
             </div>
             <div class="form-group">
@@ -312,7 +314,8 @@
               <button
                 type="button"
                 class="btn btn-primary btn-sm"
-                ng-disabled="$ctrl.state.actionInProgress
+                ng-disabled="$ctrl.state.actionInProgress || !$ctrl.formValues.Groups.length
+              || ($ctrl.state.Method === 'editor' && !$ctrl.formValues.StackFileContent)
               || ($ctrl.state.Method === 'upload' && !$ctrl.formValues.StackFile)
               || ($ctrl.state.Method === 'repository' && ((!$ctrl.formValues.RepositoryURL || !$ctrl.formValues.ComposeFilePathInRepository) || ($ctrl.formValues.RepositoryAuthentication && (!$ctrl.formValues.RepositoryUsername || !$ctrl.formValues.RepositoryPassword))))
               || !$ctrl.formValues.Name"
