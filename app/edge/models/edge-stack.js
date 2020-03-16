@@ -1,3 +1,6 @@
 export function EdgeStackViewModel(data) {
-  Object.assign(this, data);
+  this.Id = data.Id;
+  this.Name = data.Name;
+  this.Status = data.Status;
+  this.CreationDate = data.CreationDate;
 }

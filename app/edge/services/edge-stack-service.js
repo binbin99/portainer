@@ -7,20 +7,16 @@ angular
       //TODO MOCK
       [
         new EdgeStackViewModel({
-          id: 1,
-          name: 'Group 1',
-          endpoints: [1],
-          type: 'static',
-          tags: [],
-          endpointsCount: 1
+          Id: 1,
+          Name: 'Stack 1',
+          Status: { Acknowledged: 3, Ok: 1, Error: 3 },
+          CreationDate: Date.now() - 3 * 24 * 60 * 60 * 1000
         }),
         new EdgeStackViewModel({
-          id: 2,
-          name: 'Group 2',
-          endpoints: [],
-          type: 'dynamic',
-          tags: [1, 2, 3],
-          endpointsCount: 5
+          Id: 2,
+          Name: 'Stack 2',
+          Status: { Acknowledged: 2, Ok: 11, Error: 0 },
+          CreationDate: Date.now() - 15 * 24 * 60 * 60 * 1000
         })
       ];
 
