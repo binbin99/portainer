@@ -17,6 +17,7 @@ angular
       this.model = {
         Name: '',
         Endpoints: [],
+        Type: 'dynamic',
         Tags: []
       };
 

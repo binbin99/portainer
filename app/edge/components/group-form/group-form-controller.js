@@ -1,4 +1,5 @@
-angular.module('portainer.edge')
-.controller('EdgeGroupFormController', [function EdgeGroupFormController(){
-  
-}]);
+angular
+  .module('portainer.edge')
+  .controller('EdgeGroupFormController', function EdgeGroupFormController() {
+    
+  });
