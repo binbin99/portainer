@@ -10,72 +10,72 @@ angular.module('portainer.edge', []).config([
       abstract: true
     };
 
-    const batchActions = {
-      name: 'edge.batchActions',
-      url: '/batchactions',
+    const groups = {
+      name: 'edge.groups',
+      url: '/groups',
       views: {
         'content@': {
-          template: '<div>batch actions</div>'
+          component: 'edgeGroupsView'
         }
       }
     };
 
-    const batchActionsNew = {
-      name: 'edge.batchActions.new',
+    const groupsNew = {
+      name: 'edge.groups.new',
       url: '/new',
       views: {
         'content@': {
-          template: '<div>b a new</div>'
+          component: 'createEdgeGroupView'
         }
       }
     };
 
-    const batchActionsEdit = {
-      name: 'edge.batchActions.edit',
-      url: '/:batchActionId/edit',
+    const groupsEdit = {
+      name: 'edge.groups.edit',
+      url: '/:groupId',
       views: {
         'content@': {
-          template: '<div>b a edit</div>'
+          component: 'editEdgeGroupView'
         }
       }
     };
 
-    const deploymentGroups = {
-      name: 'edge.deploymentGroups',
-      url: '/deploymentgroups',
+    const stacks = {
+      name: 'edge.stacks',
+      url: '/stacks',
       views: {
         'content@': {
-          component: 'deploymentGroupsView'
+          component: 'edgeStacksView'
         }
       }
     };
 
-    const deploymentGroupsNew = {
-      name: 'edge.deploymentGroups.new',
+    const stacksNew = {
+      name: 'edge.stacks.new',
       url: '/new',
       views: {
         'content@': {
-          component: 'createDeploymentGroupView'
+          component: 'createEdgeStackView'
         }
       }
     };
 
-    const deploymentGroupsEdit = {
-      name: 'edge.deploymentGroups.edit',
-      url: '/:deploymentGroupId',
+    const stacksEdit = {
+      name: 'edge.stacks.edit',
+      url: '/:stackId',
       views: {
         'content@': {
-          component: 'editDeploymentGroupView'
+          component: 'editEdgeStackView'
         }
       }
     };
 
     $stateRegistryProvider.register(edge);
-    $stateRegistryProvider.register(batchActions);
-    $stateRegistryProvider.register(batchActionsNew);
-    $stateRegistryProvider.register(batchActionsEdit);
-    $stateRegistryProvider.register(deploymentGroups);
-    $stateRegistryProvider.register(deploymentGroupsEdit);
-    $stateRegistryProvider.register(deploymentGroupsNew);
+    $stateRegistryProvider.register(groups);
+    $stateRegistryProvider.register(groupsNew);
+    $stateRegistryProvider.register(groupsEdit);
+    $stateRegistryProvider.register(stacks);
+    $stateRegistryProvider.register(stacksEdit);
+    $stateRegistryProvider.register(stacksNew);
   }
 ]);

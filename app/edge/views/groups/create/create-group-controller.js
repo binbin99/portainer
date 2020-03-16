@@ -1,9 +1,9 @@
 angular
   .module('portainer.edge')
   .controller(
-    'CreateDeploymentGroupController',
-    function CreateDeploymentGroupController(
-      DeploymentGroupService,
+    'CreateEdgeGroupController',
+    function CreateEdgeGroupController(
+      EdgeGroupService,
       EndpointService,
       GroupService,
       TagService,
@@ -36,11 +36,11 @@ angular
       async function createGroup() {
         this.state.actionInProgress = true;
         try {
-          await DeploymentGroupService.create(this.model);
-          Notifications.success('Registry successfully created');
-          $state.go('edge.deploymentGroups');
+          await EdgeGroupService.create(this.model);
+          Notifications.success('Edge group successfully created');
+          $state.go('edge.groups');
         } catch (err) {
-          Notifications.error('Failure', err, 'Unable to create registry');
+          Notifications.error('Failure', err, 'Unable to create edge group');
         }
         this.state.actionInProgress = false;
       }

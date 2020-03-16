@@ -2,7 +2,7 @@
   <rd-widget>
     <rd-widget-header
       icon="fa-plane-departure"
-      title-text="Deployment Groups"
+      title-text="Edge Groups"
     >
     </rd-widget-header>
     <rd-widget-body classes="no-padding">
@@ -15,8 +15,8 @@
         >
           <i class="fa fa-trash-alt space-right" aria-hidden="true"></i>Remove
         </button>
-        <button type="button" class="btn btn-sm btn-primary" ui-sref="edge.deploymentGroups.new">
-          <i class="fa fa-plus space-right" aria-hidden="true"></i>Add deployment group
+        <button type="button" class="btn btn-sm btn-primary" ui-sref="edge.groups.new">
+          <i class="fa fa-plus space-right" aria-hidden="true"></i>Add edge group
         </button>
       </div>
       <div class="searchBar">
@@ -106,7 +106,7 @@
                   />
                   <label for="select_{{ $index }}"></label>
                 </span>
-                <a ui-sref="edge.deploymentGroups.edit({deploymentGroupId: item.Id})">{{ item.Name }}</a>
+                <a ui-sref="edge.groups.edit({groupId: item.Id})">{{ item.Name }}</a>
               </td>
               <td>{{ item.Endpoints.length }}</td>
               <td>{{ item.Tags.length }}</td>
@@ -116,7 +116,7 @@
             </tr>
             <tr ng-if="$ctrl.state.filteredDataSet.length === 0">
               <td colspan="4" class="text-center text-muted">
-                No deployment groups
+                No edge groups
               </td>
             </tr>
           </tbody>

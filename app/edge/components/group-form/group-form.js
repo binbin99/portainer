@@ -1,6 +1,6 @@
-angular.module('portainer.edge').component('deploymentGroupForm', {
-  templateUrl: './deployment-group-form.html',
-  controller: 'DeploymentGroupFormController',
+angular.module('portainer.edge').component('edgeGroupForm', {
+  templateUrl: './group-form.html',
+  controller: 'EdgeGroupFormController',
   bindings: {
     model: '<' /* {Name: String, Endpoints: endpointID[], Tags: String[] */,
     endpoints: '<',

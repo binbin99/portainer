@@ -1,6 +1,6 @@
 angular
   .module('portainer.app')
-  .factory('DeploymentGroupService', function DeploymentGroupServiceFactory() {
+  .factory('EdgeGroupService', function EdgeGroupServiceFactory() {
     const groups =
       //TODO MOCK
       [
@@ -10,33 +10,34 @@ angular
 
     var service = {};
 
-    service.deploymentGroup = async function deploymentGroup(groupID) {
+    service.group = async function group(groupId) {
       await wait(1000);
-      return groups.find(({ ID }) => groupID === ID);
+      return groups.find(({ Id }) => +groupId === Id);
       // return Endpoints.get({id: endpointID}).$promise;
     };
 
-    service.deploymentGroups = async function deploymentGroups() {
+    service.groups = async function groups() {
       await wait(1000);
       return [...groups];
       // return Endpoints.query({start, limit, search}).$promise;
     };
 
-    service.remove = async function remove(groupID) {
-      const index = groups.findIndex(({ ID }) => ID === groupID);
+    service.remove = async function remove(groupId) {
+      const index = groups.findIndex(({ Id }) => Id === groupId);
       await wait(1000);
       groups.splice(index, 1);
     };
 
     service.create = async function create(group) {
       await wait(1000);
-      group.index = groups.length + 1;
+      group.Id = groups.length + 1;
       groups.push(group);
     };
 
-    service.update = async function update(groupID, group) {
+    service.update = async function update(groupId, group) {
+      const index = groups.findIndex(({ Id }) => Id === groupId);
       await wait(1000);
-      groups[groupID - 1] = group;
+      groups[index] = group;
     };
 
     return service;

@@ -82,13 +82,13 @@
     </li>
     <ng-if="isAdmin"><!-- TODO hide when batch actions is disabled -->
       <li class="sidebar-title">
-        <span>Edge</span>
+        <span>Edge Compute</span>
       </li>
       <li class="sidebar-list">
-        <a ui-sref="edge.deploymentGroups" ui-sref-active="active">Deployment Groups <span class="menu-icon fa fa-plane-departure fa-fw"></span></a>
+        <a ui-sref="edge.groups" ui-sref-active="active">Edge Groups <span class="menu-icon fa fa-plane-departure fa-fw"></span></a>
       </li>
       <li class="sidebar-list">
-        <a ui-sref="edge.batchActions" ui-sref-active="active">Batch Actions <span class="menu-icon fa fa-radiation fa-fw"></span></a>
+        <a ui-sref="edge.stacks" ui-sref-active="active">Edge Stacks<span class="menu-icon fa fa-radiation fa-fw"></span></a>
       </li>
     </ng-if>
   </ul>

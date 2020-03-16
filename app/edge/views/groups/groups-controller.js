@@ -1,15 +1,15 @@
 angular
   .module('portainer.edge')
-  .controller('DeploymentGroupsController', function DeploymentGroupsController(
+  .controller('EdgeGroupsController', function EdgeGroupsController(
     Notifications,
     $state,
     $scope,
-    DeploymentGroupService
+    EdgeGroupService
   ) {
     this.removeAction = removeAction.bind(this);
 
     this.$onInit = async function $onInit() {
-      this.items = await DeploymentGroupService.deploymentGroups();
+      this.items = await EdgeGroupService.groups();
       $scope.$digest();
     };
 
@@ -17,11 +17,11 @@ angular
       let actionCount = selectedItems.length;
       for (const item of selectedItems) {
         try {
-          await DeploymentGroupService.remove(item.Id);
+          await EdgeGroupService.remove(item.Id);
           $scope.$digest();
 
           Notifications.success(
-            'Deployment Group successfully removed',
+            'Edge Group successfully removed',
             item.Name
           );
           const index = this.items.indexOf(item);
@@ -30,7 +30,7 @@ angular
           Notifications.error(
             'Failure',
             err,
-            'Unable to remove Deployment Group'
+            'Unable to remove Edge Group'
           );
         } finally {
           actionCount--;

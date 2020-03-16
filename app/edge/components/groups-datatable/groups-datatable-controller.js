@@ -1,8 +1,8 @@
 angular
   .module('portainer.edge')
   .controller(
-    'DeploymentGroupsDatatableController',
-    function DeploymentGroupsDatatableController(
+    'EdgeGroupsDatatableController',
+    function EdgeGroupsDatatableController(
       $scope,
       $controller,
       DatatableService

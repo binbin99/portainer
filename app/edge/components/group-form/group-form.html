@@ -1,4 +1,4 @@
-<form class="form-horizontal" name="deploymentGroupForm" ng-submit="$ctrl.formAction()">
+<form class="form-horizontal" name="EdgeGroupForm" ng-submit="$ctrl.formAction()">
   <div class="form-group">
     <label for="group_name" class="col-sm-3 col-lg-2 control-label text-left">
       Name
@@ -15,9 +15,9 @@
       />
     </div>
   </div>
-  <div class="form-group" ng-show="deploymentGroupForm.group_name.$invalid">
+  <div class="form-group" ng-show="EdgeGroupForm.group_name.$invalid">
     <div class="col-sm-12 small text-warning">
-      <div ng-messages="deploymentGroupForm.group_name.$error">
+      <div ng-messages="EdgeGroupForm.group_name.$error">
         <p ng-message="required">
           <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
           This field is required.
@@ -57,7 +57,7 @@
       <button
         type="submit"
         class="btn btn-primary btn-sm"
-        ng-disabled="$ctrl.actionInProgress || !deploymentGroupForm.$valid"
+        ng-disabled="$ctrl.actionInProgress || !EdgeGroupForm.$valid"
         button-spinner="$ctrl.actionInProgress"
       >
         <span ng-hide="$ctrl.actionInProgress"
